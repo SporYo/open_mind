@@ -26,11 +26,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666159650736</updated>
-      <workItem from="1666159652132" duration="9467000" />
+      <workItem from="1666159652132" duration="12532000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="835" y="418" width="249" height="276" key="Github.ShareDialog" timestamp="1666172901416">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="835" y="418" width="249" height="276" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1666172901416" />
   </component>
 </project>

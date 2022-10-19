@@ -3,428 +3,543 @@
 
 <head>
 
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 
-	<title>Заголовок</title>
-	<meta name="description" content="">
+    <title>Заголовок</title>
+    <meta name="description" content="">
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<meta property="og:image" content="path/to/image.jpg">
+    <meta property="og:image" content="path/to/image.jpg">
 
-	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
 
-	<!-- Header CSS (First Sections of Website: paste after release from header.min.css here) -->
-	<style></style>
+    <!-- Header CSS (First Sections of Website: paste after release from header.min.css here) -->
+    <style></style>
 
-	<!-- Load CSS, CSS Localstorage & WebFonts Main Function -->
-	<script>
-		! function (e) {
-			"use strict";
+    <!-- Load CSS, CSS Localstorage & WebFonts Main Function -->
+    <script>
+        !function (e) {
+            "use strict";
 
-			function t(e, t, n) {
-				e.addEventListener ? e.addEventListener(t, n, !1) : e.attachEvent && e.attachEvent("on" + t, n)
-			}
+            function t(e, t, n) {
+                e.addEventListener ? e.addEventListener(t, n, !1) : e.attachEvent && e.attachEvent("on" + t, n)
+            }
 
-			function n(t, n) {
-				return e.localStorage && localStorage[t + "_content"] && localStorage[t + "_file"] === n
-			}
+            function n(t, n) {
+                return e.localStorage && localStorage[t + "_content"] && localStorage[t + "_file"] === n
+            }
 
-			function a(t, a) {
-				if (e.localStorage && e.XMLHttpRequest) n(t, a) ? o(localStorage[t + "_content"]) : l(t, a);
-				else {
-					var s = r.createElement("link");
-					s.href = a, s.id = t, s.rel = "stylesheet", s.type = "text/css", r.getElementsByTagName("head")[0]
-						.appendChild(s), r.cookie = t
-				}
-			}
+            function a(t, a) {
+                if (e.localStorage && e.XMLHttpRequest) n(t, a) ? o(localStorage[t + "_content"]) : l(t, a);
+                else {
+                    var s = r.createElement("link");
+                    s.href = a, s.id = t, s.rel = "stylesheet", s.type = "text/css", r.getElementsByTagName("head")[0]
+                        .appendChild(s), r.cookie = t
+                }
+            }
 
-			function l(e, t) {
-				var n = new XMLHttpRequest;
-				n.open("GET", t, !0), n.onreadystatechange = function () {
-					4 === n.readyState && 200 === n.status && (o(n.responseText), localStorage[e + "_content"] = n
-						.responseText, localStorage[e + "_file"] = t)
-				}, n.send()
-			}
+            function l(e, t) {
+                var n = new XMLHttpRequest;
+                n.open("GET", t, !0), n.onreadystatechange = function () {
+                    4 === n.readyState && 200 === n.status && (o(n.responseText), localStorage[e + "_content"] = n
+                        .responseText, localStorage[e + "_file"] = t)
+                }, n.send()
+            }
 
-			function o(e) {
-				var t = r.createElement("style");
-				t.setAttribute("type", "text/css"), r.getElementsByTagName("head")[0].appendChild(t), t.styleSheet ? t
-					.styleSheet.cssText = e : t.innerHTML = e
-			}
-			var r = e.document;
-			e.loadCSS = function (e, t, n) {
-				var a, l = r.createElement("link");
-				if (t) a = t;
-				else {
-					var o;
-					o = r.querySelectorAll ? r.querySelectorAll("style,link[rel=stylesheet],script") : (r.body || r
-						.getElementsByTagName("head")[0]).childNodes, a = o[o.length - 1]
-				}
-				var s = r.styleSheets;
-				l.rel = "stylesheet", l.href = e, l.media = "only x", a.parentNode.insertBefore(l, t ? a : a.nextSibling);
-				var c = function (e) {
-					for (var t = l.href, n = s.length; n--;)
-						if (s[n].href === t) return e();
-					setTimeout(function () {
-						c(e)
-					})
-				};
-				return l.onloadcssdefined = c, c(function () {
-					l.media = n || "all"
-				}), l
-			}, e.loadLocalStorageCSS = function (l, o) {
-				n(l, o) || r.cookie.indexOf(l) > -1 ? a(l, o) : t(e, "load", function () {
-					a(l, o)
-				})
-			}
-		}(this);
-	</script>
+            function o(e) {
+                var t = r.createElement("style");
+                t.setAttribute("type", "text/css"), r.getElementsByTagName("head")[0].appendChild(t), t.styleSheet ? t
+                    .styleSheet.cssText = e : t.innerHTML = e
+            }
 
-	<!-- Load CSS Start -->
-	<script>
-		loadLocalStorageCSS("webfonts", "css/fonts.min.css?ver=1.0.0");
-	</script>
-	<script>
-		loadCSS("css/header.min.css?ver=1.0.0", false, "all");
-	</script>
-	<script>
-		loadCSS("css/main.min.css?ver=1.0.0", false, "all");
-	</script>
-	<!-- Load CSS End -->
+            var r = e.document;
+            e.loadCSS = function (e, t, n) {
+                var a, l = r.createElement("link");
+                if (t) a = t;
+                else {
+                    var o;
+                    o = r.querySelectorAll ? r.querySelectorAll("style,link[rel=stylesheet],script") : (r.body || r
+                        .getElementsByTagName("head")[0]).childNodes, a = o[o.length - 1]
+                }
+                var s = r.styleSheets;
+                l.rel = "stylesheet", l.href = e, l.media = "only x", a.parentNode.insertBefore(l, t ? a : a.nextSibling);
+                var c = function (e) {
+                    for (var t = l.href, n = s.length; n--;)
+                        if (s[n].href === t) return e();
+                    setTimeout(function () {
+                        c(e)
+                    })
+                };
+                return l.onloadcssdefined = c, c(function () {
+                    l.media = n || "all"
+                }), l
+            }, e.loadLocalStorageCSS = function (l, o) {
+                n(l, o) || r.cookie.indexOf(l) > -1 ? a(l, o) : t(e, "load", function () {
+                    a(l, o)
+                })
+            }
+        }(this);
+    </script>
 
-	<!-- Load CSS Compiled without JS -->
-	<noscript>
-		<link rel="stylesheet" href="css/fonts.min.css">
-		<link rel="stylesheet" href="css/main.min.css">
-	</noscript>
+    <!-- Load CSS Start -->
+    <script>
+        loadLocalStorageCSS("webfonts", "css/fonts.min.css?ver=1.0.0");
+    </script>
+    <script>
+        loadCSS("css/header.min.css?ver=1.0.0", false, "all");
+    </script>
+    <script>
+        loadCSS("css/main.min.css?ver=1.0.0", false, "all");
+    </script>
+    <!-- Load CSS End -->
+
+    <!-- Load CSS Compiled without JS -->
+    <noscript>
+        <link rel="stylesheet" href="css/fonts.min.css">
+        <link rel="stylesheet" href="css/main.min.css">
+    </noscript>
 
 </head>
 
 <body>
 
-	<header class="header">
-		<div class="container">
-			<div class="header__content">
-				<div class="header__logo">
-					<a href="#"><img src="img/header/logo.png" alt=""></a>
-				</div>
-				<nav class="header__nav">
-					<a class="header__link" href="#specialists">Наша команда</a>
-					<!-- <a class="header__link" href="">Онлайн прием</a> -->
-					<a class="header__link" href="#about">О нас</a>
-					<a class="header__link" href="#contacts">Контакты</a>
-				</nav>
-				<div class="header__info">
-					<div class="header__phone">
-						<a href="tel:+78123222208">+7 (812) 322 22 08</a>
-						<p>пн-пт 10:00–19:00</p>
-					</div>
-					<button class="header__button btn-form">Заказать звонок</button>
-				</div>
-			</div>
-		</div>
-	</header>
+<header class="header">
+    <div class="container">
+        <div class="header__content">
+            <div class="header__logo">
+                <a href="#"><img src="img/header/logo.png" alt=""></a>
+            </div>
+            <nav class="header__nav">
+                <a class="header__link" href="#specialists">Наша команда</a>
+                <a class="header__link" href="#about">О нас</a>
+                 <a class="header__link" href="#price">Стоимость услуг</a>
+                <a class="header__link" href="#contacts">Контакты</a>
+            </nav>
+            <div class="header__info">
+                <div class="header__phone">
+                    <a href="tel:+78123222208">+7 (812) 322 22 08</a>
+                    <p>пн-пт 10:00–19:00</p>
+                </div>
+                <button class="header__button btn-form">Заказать звонок</button>
+            </div>
+        </div>
+    </div>
+</header>
 
-	<main class="main">
+<main class="main">
 
-		<section class="welcome">
-			<div class="container">
-				<div class="welcome__content">
-					<h1><span>Open mind clinic</span></h1>
-					<h2>Это современная клиника доказательной психиатрии, психотерапии и неврологии в Санкт-Петербурге.
-					</h2>
-					<h2>Вы не столкнетесь с постановкой несуществующих диагнозов и спорными назначениями. Мы знаем, как
-						создать доверие между врачом и пациентом. </h2>
-				</div>
-			</div>
-		</section>
+    <section class="welcome">
+        <div class="container">
+            <div class="welcome__content">
+                <h1><span>Open mind clinic</span></h1>
+                <h2>Это современная клиника доказательной психиатрии, психотерапии и неврологии в Санкт-Петербурге.
+                </h2>
+                <h2>Вы не столкнетесь с постановкой несуществующих диагнозов и спорными назначениями. Мы знаем, как
+                    создать доверие между врачом и пациентом. </h2>
+            </div>
+        </div>
+    </section>
 
-		<section class="specialists" id="specialists">
-			<div class="container">
-				<div class="specialists__content">
-					<h2>Наша команда</h2>
-					<div class="specialists__cards">
-						<div class="specialists__card">
-							<img src="img/specialists/shabaeva.png" alt="">
-							<h3><strong>Шабаева Мария Григорьевна</strong></h3>
-							<p><strong>Главный врач клиники</strong> </p>
-							<p><strong>Образование:</strong> <br>- Первый Санкт-Петербургский государственный
-								медицинский университет имени академика И.П. Павлова, специальность «Педиатрия», 2018 г.
-							</p>
-							<!-- <p><strong>Прием с 12 лет.</strong> </p>
-							<p><strong>Стоимость:</strong> 1000p/ч</p> -->
-							<img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
-						</div>
-						<div class="specialists__card">
-							<img src="img/specialists/kostin.png" alt="">
-							<h3><strong>Костин Антон Сергеевич </strong></h3>
-							<p><strong>Врач-психиатр, нарколог, руководитель Ассоциации Когнетивно-Бихевиоральных
-									Терапевтов в Санкт-Петербурге</strong></p>
-							<p><strong>Образование:</strong> <br>- Санкт-Петербургский государственный педиатрический
-								медицинский университет, 2008 г.
-								<br>- Санкт-Петербургская Медицинская Академия Последипломного образования, СПб МАПО,
-								ординатура, кафедра психиатрии
-							</p>
-							<p><strong>Прием взрослых</strong> </p>
-							<p><strong>Стоимость:</strong> 7500 руб./ч</p>
-							<img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
-						</div>
-						<div class="specialists__card">
-							<img src="img/specialists/erichev.png" alt="">
-							<h3><strong>Еричев Александр Николаевич </strong></h3>
-							<p><strong> Доктор медицинских наук, врач-психиатр, нарколог, заместитель главного врача по
-									научной работе </strong></p>
-							<p><strong>Образование:</strong> <br>- Военно-медицинская Академия имени С.М. Кирова, 2000
-								г.
-								<br>- Интернатура по психиатрии, Национальный медицинский исследовательский центр
-								психиатрии и неврологии им. В.М. Бехтерева, 2001 г.
-								<br>- Защита диссертации на соискание ученой степени кандидата медицинских наук, 2005 г.
-								<br>- Защита диссертации на соискание ученой степени доктора медицинских наук, 2019 г.
-							</p>
-							<p><strong>Прием взрослых </strong> </p>
-							<p><strong>Стоимость:</strong> 15000 руб./ч</p>
-							<img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
-						</div>
-						<div class="specialists__card">
-							<img src="img/specialists/efremov.jpg" alt="">
-							<h3><strong>Ефремов Артем Андреевич </strong></h3>
-							<p><strong> Врач-психиатр, психотерапевт </strong></p>
-							<p><strong>Образование:</strong> <br>- Северный государственный медицинский университет, лечебное дело, 2018 г.
-								<br>- Ординатура, Санкт-Петербургский государственный педиатрический медицинский университет, кафедра психиатрии, 2020 г.
-								</p>
-							<p><strong>Прием взрослых </strong> </p>
-							<p><strong>Стоимость:</strong> 5500 руб./ч</p>
-							<img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
-						</div>
-						<div class="specialists__card">
-							<img src="img/specialists/zalevkiy.png" alt="">
-							<h3><strong>Залевский Никита Дмитриевич </strong></h3>
-							<p><strong>Врач-психиатр, психотерапевт </strong> </p>
-							<p><strong>Образование:</strong> <br>- Северо-Западный Государственный Медицинский
-								Университет имени И.И. Мечникова
-								<br>- Ординатура в НМИЦ им. В.М. Бехтерева на базе отделения интегративной
-								фармако-психотерапии
-							</p>
-							<p><strong>Прием взрослых </strong> </p>
-							<p><strong>Стоимость:</strong> 5500 руб./ч</p>
-							<img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
-						</div>
-						<div class="specialists__card">
-							<img src="img/specialists/klimchik.png" alt="">
-							<h3><strong>Климчук Сергей Вадимович</strong></h3>
-							<p><strong>Врач-психиатр, психотерапевт, заместитель главного врача по медицинской работе </strong> </p>
-							<p><strong>Образование:</strong> <br>- Балтийский Федеральный Университет им. Иммануила Канта по специальности «Лечебное дело», 2017 г.
-								<br>- СЗГМУ им. И.И. Мечникова, ординатура по специальности «Психиатрия»
-								<br>- Институт психотерапии и медицинской психологии им. Б.Д. Карвасарского, профессиональная переподготовка по специальности «Психотерапия»
-								<br>- Essential Psychopharmacology, Harvard Medical School
-								</p>
-							<p><strong>Прием подростков с 12 лет и взрослых</strong> </p>
-							<p><strong>Стоимость:</strong> 5500 руб./ч</p>
-							<img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
-						</div>
-						<div class="specialists__card">
-							<img src="img/specialists/koshkina.png" alt="">
-							<h3><strong>Кошкина Ирина Викторовна </strong></h3>
-							<p><strong> Врач-психиатр, психотерапевт </strong></p>
-							<p><strong>Образование:</strong> <br>- Ивановская государственная медицинская академия,
-								лечебное дело, 2009 г.
-								<br>- МАПО, клиническая ординатура по психиатрии, 2011 г.
-								<br>- Профессиональная переподготовка, Северо-Западный государственный медицинский
-								университет им. И.И. Мечникова, психотерапия, 2013 г.
-								<br>- Профессиональная переподготовка, Северо-Западный государственный медицинский
-								университет им. И.И. Мечникова, организация здравоохранения и общественного здоровья,
-								2019 г.
-							</p>
-							<p><strong>Прием взрослых</strong> </p>
-							<p><strong>Стоимость:</strong> 5500 руб./ч</p>
-							<img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
-						</div>
-						<div class="specialists__card">
-							<img src="img/specialists/krasnoshekov.png" alt="">
-							<h3><strong>Краснощеков Степан Александрович </strong></h3>
-							<p><strong> Врач-психиатр, руководитель направления детской психиатрии и
-									психотерапии</strong></p>
-							<p><strong>Образование:</strong> <br>- Волгоградский государственный медицинский университет
-								<br>- Клиническая ординатура по психиатрии в ФГБУ НМИЦ ПН им. В.М.Бехтерева МЗ РФ
-							</p>
-							<p><strong>Прием взрослых и детей с 1,5 лет </strong> </p>
-							<p><strong>Стоимость:</strong> 5500 руб./ч</p>
-							<img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
-						</div>
-						<div class="specialists__card">
-							<img src="img/specialists/kudryuvceva.png" alt="">
-							<h3><strong>Кудрявцева Анастасия Георгиевна </strong></h3>
-							<p><strong> Врач-психиатр, психотерапевт </strong></p>
-							<p><strong>Образование:</strong> <br>- ОГМУ врач лечебное дело 2011 г.
-								<br>- СЗГМУ им. Мечникова интернатура психиатрия 2012 г.
-								<br>- СЗГМУ им. Мечникова переподготовка по психотерапии 2014 г.
-							</p>
-							<p><strong>Прием взрослых</strong> </p>
-							<p><strong>Стоимость:</strong> 5500 руб./ч</p>
-							<img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
-						</div>
-						<div class="specialists__card">
-							<img src="img/specialists/chernishov.png" alt="">
-							<h3><strong>Чернышов Пётр Юрьевич </strong></h3>
-							<p><strong> Невролог, эпилептолог</strong></p>
-							<p><strong>Образование:</strong> <br>- Лечебный факультет и ординатура по неврологии в
-								СамГМУ
-								<br>- UNITED STATES MEDICAL LICENSING
-								<br>- International League Against Epilepsy certificate
-								<br>- ITMO University PUBLIC HEALTH SCIENCES Master’s Program
-							</p>
-							<p><strong>Прием детей и взрослых </strong> </p>
-							<p><strong>Стоимость:</strong> 5500 руб./ч</p>
-							<img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
-						</div>
-						<div class="specialists__card">
-							<img src="img/specialists/sich.png" alt="">
-							<h3><strong>Сыч Кристина Андреевна</strong></h3>
-							<p><strong>Контент-менеджер </strong></p>
-							<p><strong>Образование:</strong> <br>- Алтайский государственный университет, факультет
-								массовых коммуникаций, филологии и политологии, 2014 г.
-								<br>- НИУ ВШЭ (СПб), направление «Политология» (магистратура), 2016 г.
-							</p>
-							<img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
-						</div>
-						<div class="specialists__card">
-							<img src="img/specialists/nabokov.png" alt="">
-							<h3><strong>Набоков Тарас Игоревич </strong></h3>
-							<p><strong>Clinic-менеджер </strong></p>
-							<p><strong>Образование:</strong> <br>- ОГМУ, врач лечебное дело, 2011 г.
-							</p>
-							<img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <section class="specialists" id="specialists">
+        <div class="container">
+            <div class="specialists__content">
+                <h2>Наша команда</h2>
+                <div class="specialists__cards">
+                    <div class="specialists__card">
+                        <img src="img/specialists/shabaeva.png" alt="">
+                        <h3><strong>Шабаева Мария Григорьевна</strong></h3>
+                        <p><strong>Главный врач клиники</strong></p>
+                        <p><strong>Образование:</strong> <br>- Первый Санкт-Петербургский государственный
+                            медицинский университет имени академика И.П. Павлова, специальность «Педиатрия», 2018 г.
+                        </p>
+                        <!-- <p><strong>Прием с 12 лет.</strong> </p>
+                        <p><strong>Стоимость:</strong> 1000p/ч</p> -->
+                        <img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
+                    </div>
+                    <div class="specialists__card">
+                        <img src="img/specialists/kostin.png" alt="">
+                        <h3><strong>Костин Антон Сергеевич </strong></h3>
+                        <p><strong>Врач-психиатр, нарколог, руководитель Ассоциации Когнетивно-Бихевиоральных
+                            Терапевтов в Санкт-Петербурге</strong></p>
+                        <p><strong>Образование:</strong> <br>- Санкт-Петербургский государственный педиатрический
+                            медицинский университет, 2008 г.
+                            <br>- Санкт-Петербургская Медицинская Академия Последипломного образования, СПб МАПО,
+                            ординатура, кафедра психиатрии
+                        </p>
+                        <p><strong>Прием взрослых</strong></p>
+                        <p><strong>Стоимость:</strong> 7500 руб./ч</p>
+                        <img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
+                    </div>
+                    <div class="specialists__card">
+                        <img src="img/specialists/erichev.png" alt="">
+                        <h3><strong>Еричев Александр Николаевич </strong></h3>
+                        <p><strong> Доктор медицинских наук, врач-психиатр, нарколог, заместитель главного врача по
+                            научной работе </strong></p>
+                        <p><strong>Образование:</strong> <br>- Военно-медицинская Академия имени С.М. Кирова, 2000
+                            г.
+                            <br>- Интернатура по психиатрии, Национальный медицинский исследовательский центр
+                            психиатрии и неврологии им. В.М. Бехтерева, 2001 г.
+                            <br>- Защита диссертации на соискание ученой степени кандидата медицинских наук, 2005 г.
+                            <br>- Защита диссертации на соискание ученой степени доктора медицинских наук, 2019 г.
+                        </p>
+                        <p><strong>Прием взрослых </strong></p>
+                        <p><strong>Стоимость:</strong> 15000 руб./ч</p>
+                        <img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
+                    </div>
+                    <div class="specialists__card">
+                        <img src="img/specialists/efremov.jpg" alt="">
+                        <h3><strong>Ефремов Артем Андреевич </strong></h3>
+                        <p><strong> Врач-психиатр, психотерапевт </strong></p>
+                        <p><strong>Образование:</strong> <br>- Северный государственный медицинский университет,
+                            лечебное дело, 2018 г.
+                            <br>- Ординатура, Санкт-Петербургский государственный педиатрический медицинский
+                            университет, кафедра психиатрии, 2020 г.
+                        </p>
+                        <p><strong>Прием взрослых </strong></p>
+                        <p><strong>Стоимость:</strong> 5500 руб./ч</p>
+                        <img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
+                    </div>
+                    <div class="specialists__card">
+                        <img src="img/specialists/zalevkiy.png" alt="">
+                        <h3><strong>Залевский Никита Дмитриевич </strong></h3>
+                        <p><strong>Врач-психиатр, психотерапевт </strong></p>
+                        <p><strong>Образование:</strong> <br>- Северо-Западный Государственный Медицинский
+                            Университет имени И.И. Мечникова
+                            <br>- Ординатура в НМИЦ им. В.М. Бехтерева на базе отделения интегративной
+                            фармако-психотерапии
+                        </p>
+                        <p><strong>Прием взрослых </strong></p>
+                        <p><strong>Стоимость:</strong> 5500 руб./ч</p>
+                        <img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
+                    </div>
+                    <div class="specialists__card">
+                        <img src="img/specialists/klimchik.png" alt="">
+                        <h3><strong>Климчук Сергей Вадимович</strong></h3>
+                        <p><strong>Врач-психиатр, психотерапевт, заместитель главного врача по медицинской
+                            работе </strong></p>
+                        <p><strong>Образование:</strong> <br>- Балтийский Федеральный Университет им. Иммануила Канта по
+                            специальности «Лечебное дело», 2017 г.
+                            <br>- СЗГМУ им. И.И. Мечникова, ординатура по специальности «Психиатрия»
+                            <br>- Институт психотерапии и медицинской психологии им. Б.Д. Карвасарского,
+                            профессиональная переподготовка по специальности «Психотерапия»
+                            <br>- Essential Psychopharmacology, Harvard Medical School
+                        </p>
+                        <p><strong>Прием подростков с 12 лет и взрослых</strong></p>
+                        <p><strong>Стоимость:</strong> 5500 руб./ч</p>
+                        <img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
+                    </div>
+                    <div class="specialists__card">
+                        <img src="img/specialists/koshkina.png" alt="">
+                        <h3><strong>Кошкина Ирина Викторовна </strong></h3>
+                        <p><strong> Врач-психиатр, психотерапевт </strong></p>
+                        <p><strong>Образование:</strong> <br>- Ивановская государственная медицинская академия,
+                            лечебное дело, 2009 г.
+                            <br>- МАПО, клиническая ординатура по психиатрии, 2011 г.
+                            <br>- Профессиональная переподготовка, Северо-Западный государственный медицинский
+                            университет им. И.И. Мечникова, психотерапия, 2013 г.
+                            <br>- Профессиональная переподготовка, Северо-Западный государственный медицинский
+                            университет им. И.И. Мечникова, организация здравоохранения и общественного здоровья,
+                            2019 г.
+                        </p>
+                        <p><strong>Прием взрослых</strong></p>
+                        <p><strong>Стоимость:</strong> 5500 руб./ч</p>
+                        <img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
+                    </div>
+                    <div class="specialists__card">
+                        <img src="img/specialists/krasnoshekov.png" alt="">
+                        <h3><strong>Краснощеков Степан Александрович </strong></h3>
+                        <p><strong> Врач-психиатр, руководитель направления детской психиатрии и
+                            психотерапии</strong></p>
+                        <p><strong>Образование:</strong> <br>- Волгоградский государственный медицинский университет
+                            <br>- Клиническая ординатура по психиатрии в ФГБУ НМИЦ ПН им. В.М.Бехтерева МЗ РФ
+                        </p>
+                        <p><strong>Прием взрослых и детей с 1,5 лет </strong></p>
+                        <p><strong>Стоимость:</strong> 5500 руб./ч</p>
+                        <img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
+                    </div>
+                    <div class="specialists__card">
+                        <img src="img/specialists/kudryuvceva.png" alt="">
+                        <h3><strong>Кудрявцева Анастасия Георгиевна </strong></h3>
+                        <p><strong> Врач-психиатр, психотерапевт </strong></p>
+                        <p><strong>Образование:</strong> <br>- ОГМУ врач лечебное дело 2011 г.
+                            <br>- СЗГМУ им. Мечникова интернатура психиатрия 2012 г.
+                            <br>- СЗГМУ им. Мечникова переподготовка по психотерапии 2014 г.
+                        </p>
+                        <p><strong>Прием взрослых</strong></p>
+                        <p><strong>Стоимость:</strong> 5500 руб./ч</p>
+                        <img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
+                    </div>
+                    <div class="specialists__card">
+                        <img src="img/specialists/chernishov.png" alt="">
+                        <h3><strong>Чернышов Пётр Юрьевич </strong></h3>
+                        <p><strong> Невролог, эпилептолог</strong></p>
+                        <p><strong>Образование:</strong> <br>- Лечебный факультет и ординатура по неврологии в
+                            СамГМУ
+                            <br>- UNITED STATES MEDICAL LICENSING
+                            <br>- International League Against Epilepsy certificate
+                            <br>- ITMO University PUBLIC HEALTH SCIENCES Master’s Program
+                        </p>
+                        <p><strong>Прием детей и взрослых </strong></p>
+                        <p><strong>Стоимость:</strong> 5500 руб./ч</p>
+                        <img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
+                    </div>
+                    <div class="specialists__card">
+                        <img src="img/specialists/sich.png" alt="">
+                        <h3><strong>Сыч Кристина Андреевна</strong></h3>
+                        <p><strong>Контент-менеджер </strong></p>
+                        <p><strong>Образование:</strong> <br>- Алтайский государственный университет, факультет
+                            массовых коммуникаций, филологии и политологии, 2014 г.
+                            <br>- НИУ ВШЭ (СПб), направление «Политология» (магистратура), 2016 г.
+                        </p>
+                        <img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
+                    </div>
+                    <div class="specialists__card">
+                        <img src="img/specialists/nabokov.png" alt="">
+                        <h3><strong>Набоков Тарас Игоревич </strong></h3>
+                        <p><strong>Clinic-менеджер </strong></p>
+                        <p><strong>Образование:</strong> <br>- ОГМУ, врач лечебное дело, 2011 г.
+                        </p>
+                        <img class="specialists__img--bg" src="img/specialists/bg.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<section class="about" id="about">
-			<div class="container">
-				<div class="about__content">
-					<h2>О нас</h2>
-					<h3>Open Mind Clinic — это современная клиника доказательной психиатрии, психотерапии и неврологии в
-						Санкт-Петербурге. </h3>
-					<p>Сфера ментального здоровья до сих пор стигматизирована и связана с мифами. Из-за этого люди часто
-						не решаются обращаться за помощью, пытаясь справиться со своим состояниями и проблемами
-						самостоятельно. В нашей клинике мы оказываем помощь только в рамках методов с доказанной
-						эффективностью и гарантируем внимательное и деликатное отношение к пациентам, а также
-						конфиденциальность. </p>
-					<strong>Вы не столкнетесь с постановкой несуществующих диагнозов и спорными назначениями. Мы знаем,
-						как создать доверие между врачом и пациентом. </strong>
-					<div class="about__blocks mt-30">
-						<div class="about__block order-1"><img src="img/about/img_1.png" alt=""></div>
-						<div class="about__block order-2">
-							<h3>Психиатрия и психотерапия для взрослых </h3>
-							<p>Помогаем с разными запросами, состояниями и психическими расстройствами. В своей практике
-								используем как методы фармакологического лечения, так и психотерапию
-							</p>
-						</div>
-					</div>
-					<div class="about__blocks">
-						<div class="about__block order-2">
-							<h3>Неврология для детей и взрослых</h3>
-							<p>Проводим прием детей с рождения. Помогаем разобраться в причинах головных болей,
-								обмороков, нарушения сна, вовремя выявить задержки психомоторного и речевого развития у
-								детей. В нашей клинике вы также можете обратиться к эпилептологу.
-							</p>
-						</div>
-						<div class="about__block order-1"><img src="img/about/img_2.png" alt=""></div>
-					</div>
-					<div class="about__blocks">
-						<div class="about__block order-1"><img src="img/about/img_1.png" alt=""></div>
-						<div class="about__block order-2">
-							<h3>Психиатрия и психотерапия для детей и подростков </h3>
-							<p>Помогаем улучшить качество жизни детям и подросткам с разными состояниями и
-								расстройствами. В рамках психотерапии помогаем подростку лучше понимать себя и свое
-								эмоциональное состояние.
-							</p>
-							<p>Прием детей у психиатра с 1,5 лет</p>
-							<p>Психотерапия подростков с 12 лет </p>
-						</div>
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about__content">
+                <h2>О нас</h2>
+                <h3>Open Mind Clinic — это современная клиника доказательной психиатрии, психотерапии и неврологии в
+                    Санкт-Петербурге. </h3>
+                <p>Сфера ментального здоровья до сих пор стигматизирована и связана с мифами. Из-за этого люди часто
+                    не решаются обращаться за помощью, пытаясь справиться со своим состояниями и проблемами
+                    самостоятельно. В нашей клинике мы оказываем помощь только в рамках методов с доказанной
+                    эффективностью и гарантируем внимательное и деликатное отношение к пациентам, а также
+                    конфиденциальность. </p>
+                <strong>Вы не столкнетесь с постановкой несуществующих диагнозов и спорными назначениями. Мы знаем,
+                    как создать доверие между врачом и пациентом. </strong>
+                <div class="about__blocks mt-30">
+                    <div class="about__block order-1"><img src="img/about/img_1.png" alt=""></div>
+                    <div class="about__block order-2">
+                        <h3>Психиатрия и психотерапия для взрослых </h3>
+                        <p>Помогаем с разными запросами, состояниями и психическими расстройствами. В своей практике
+                            используем как методы фармакологического лечения, так и психотерапию
+                        </p>
+                    </div>
+                </div>
+                <div class="about__blocks">
+                    <div class="about__block order-2">
+                        <h3>Неврология для детей и взрослых</h3>
+                        <p>Проводим прием детей с рождения. Помогаем разобраться в причинах головных болей,
+                            обмороков, нарушения сна, вовремя выявить задержки психомоторного и речевого развития у
+                            детей. В нашей клинике вы также можете обратиться к эпилептологу.
+                        </p>
+                    </div>
+                    <div class="about__block order-1"><img src="img/about/img_2.png" alt=""></div>
+                </div>
+                <div class="about__blocks">
+                    <div class="about__block order-1"><img src="img/about/img_1.png" alt=""></div>
+                    <div class="about__block order-2">
+                        <h3>Психиатрия и психотерапия для детей и подростков </h3>
+                        <p>Помогаем улучшить качество жизни детям и подросткам с разными состояниями и
+                            расстройствами. В рамках психотерапии помогаем подростку лучше понимать себя и свое
+                            эмоциональное состояние.
+                        </p>
+                        <p>Прием детей у психиатра с 1,5 лет</p>
+                        <p>Психотерапия подростков с 12 лет </p>
+                    </div>
 
-					</div>
-				</div>
-			</div>
-		</section>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<section class="contacts" id="contacts">
-			<div class="container">
-				<div class="contacts__content">
-					<h2>Контакты</h2>
+    <section class="price" id="price">
+        <div class="container">
+            <div class="price__content">
+                <h2>Стоимость услуг</h2>
+                <div class="price__block">
+                    <div class="price__title"><strong>Название услуги</strong></div>
+                    <div class="price__price"><strong>Стоимость</strong></div>
+                    <div class="price__time"><strong>Длительность приема</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием врача-психиатра первичный</strong></div>
+                    <div class="price__price"><strong>3800</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием ведущего врача-психиатра первичный</strong></div>
+                    <div class="price__price"><strong>5500</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием ведущего врача-психиатра вторичный</strong></div>
+                    <div class="price__price"><strong>5500</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием главного врача-психиатра первичный</strong></div>
+                    <div class="price__price"><strong>7500</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием главного врача-психиатра повторный</strong></div>
+                    <div class="price__price"><strong>7500</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием врача-психиатра (доктор медицинских наук) первичный</strong></div>
+                    <div class="price__price"><strong>15000</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием врача-психиатра (доктор медицинских наук) повторный </strong></div>
+                    <div class="price__price"><strong>15000</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием ведущего врача-психиатра первичный (Краснощеков С.А.)</strong></div>
+                    <div class="price__price"><strong>7500</strong></div>
+                    <div class="price__time"><strong>80 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием ведущего врача-психиатра повторный (Краснощеков С.А.)</strong></div>
+                    <div class="price__price"><strong>5500</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием врача-психотерапевта первичный</strong></div>
+                    <div class="price__price"><strong>3800</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием врача-психотерапевта повторный</strong></div>
+                    <div class="price__price"><strong>3800</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием врача-психотерапевта (доктор медицинских наук) первичный</strong></div>
+                    <div class="price__price"><strong>15000</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием врача-психотерапевта (доктор медицинских наук) повторный</strong></div>
+                    <div class="price__price"><strong>15000</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием (осмотр, консультация) врача-невролога первичный</strong></div>
+                    <div class="price__price"><strong>5500</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием (осмотр, консультация) врача-невролога повторный</strong></div>
+                    <div class="price__price"><strong>5500</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием (осмотр, консультация) врача-психиатра детского первичный</strong></div>
+                    <div class="price__price"><strong>7500</strong></div>
+                    <div class="price__time"><strong>80 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием (осмотр, консультация) врача-психиатра детского повторный</strong></div>
+                    <div class="price__price"><strong>5500</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием (осмотр, консультация) врача-невролога детского первичный</strong></div>
+                    <div class="price__price"><strong>5500</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
+                <div class="price__block">
+                    <div class="price__title"><strong>Прием (осмотр, консультация) врача-невролога детского повторный</strong></div>
+                    <div class="price__price"><strong>5500</strong></div>
+                    <div class="price__time"><strong>50 минут</strong></div>
+                </div>
 
-				</div>
-			</div>
-		</section>
+            </div>
+        </div>
+    </section>
 
-	</main>
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <div class="contacts__content">
+                <h2>Контакты</h2>
 
-	<form action="mail.php" class="form hidden" method="post">
-		<div class="form_content">
-			<span class="close">&#10006;</span>
-			<h3>Оставьте свою заявку и наш администратор свяжется с вами.</h3>
-			<input type="text" placeholder="Ваше имя">
-			<input type="tel" id="phone" name="phone" required placeholder="Ваш контактный номер">
-			<button type="submit" class="btn-full">Отправить</button>
-		</div>
-	</form>
+            </div>
+        </div>
+    </section>
 
-	<footer class="footer">
-		<div class="container">
-			<div class="footer__content"></div>
-		</div>
-	</footer>
+</main>
+
+<form action="mail.php" class="form hidden" method="post">
+    <div class="form_content">
+        <span class="close">&#10006;</span>
+        <h3>Оставьте свою заявку и наш администратор свяжется с вами.</h3>
+        <input type="text" placeholder="Ваше имя">
+        <input type="tel" id="phone" name="phone" required placeholder="Ваш контактный номер">
+        <button type="submit" class="btn-full">Отправить</button>
+    </div>
+</form>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__content"></div>
+    </div>
+</footer>
 
 
-	<div class="hidden"></div>
+<div class="hidden"></div>
 
-	<!--[if lt IE 9]>
-	<script src="libs/html5shiv/es5-shim.min.js"></script>
-	<script src="libs/html5shiv/html5shiv.min.js"></script>
-	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
-	<script src="libs/respond/respond.min.js"></script>
-	<![endif]-->
+<!--[if lt IE 9]>
+<script src="libs/html5shiv/es5-shim.min.js"></script>
+<script src="libs/html5shiv/html5shiv.min.js"></script>
+<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+<script src="libs/respond/respond.min.js"></script>
+<![endif]-->
 
-	<!-- Load Scripts Start -->
-	<script>
-		var scr = {
-			"scripts": [{
-					"src": "js/libs.js",
-					"async": false
-				},
-				{
-					"src": "js/common.js",
-					"async": false
-				}
-			]
-		};
-		! function (t, n, r) {
-			"use strict";
-			var c = function (t) {
-				if ("[object Array]" !== Object.prototype.toString.call(t)) return !1;
-				for (var r = 0; r < t.length; r++) {
-					var c = n.createElement("script"),
-						e = t[r];
-					c.src = e.src, c.async = e.async, n.body.appendChild(c)
-				}
-				return !0
-			};
-			t.addEventListener ? t.addEventListener("load", function () {
-				c(r.scripts);
-			}, !1) : t.attachEvent ? t.attachEvent("onload", function () {
-				c(r.scripts)
-			}) : t.onload = function () {
-				c(r.scripts)
-			}
-		}(window, document, scr);
-	</script>
-	<!-- Load Scripts End -->
+<!-- Load Scripts Start -->
+<script>
+    var scr = {
+        "scripts": [{
+            "src": "js/libs.js",
+            "async": false
+        },
+            {
+                "src": "js/common.js",
+                "async": false
+            }
+        ]
+    };
+    !function (t, n, r) {
+        "use strict";
+        var c = function (t) {
+            if ("[object Array]" !== Object.prototype.toString.call(t)) return !1;
+            for (var r = 0; r < t.length; r++) {
+                var c = n.createElement("script"),
+                    e = t[r];
+                c.src = e.src, c.async = e.async, n.body.appendChild(c)
+            }
+            return !0
+        };
+        t.addEventListener ? t.addEventListener("load", function () {
+            c(r.scripts);
+        }, !1) : t.attachEvent ? t.attachEvent("onload", function () {
+            c(r.scripts)
+        }) : t.onload = function () {
+            c(r.scripts)
+        }
+    }(window, document, scr);
+</script>
+<!-- Load Scripts End -->
 
 </body>
 
