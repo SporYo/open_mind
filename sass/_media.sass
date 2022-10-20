@@ -7,13 +7,15 @@
 	.container
 		width: 100%
 	.header
-
+		&__nav
+			display: none
 		&__content
 			padding: 0 5px
 		&__info
 			margin-right: 15px
 	.welcome
 		padding: 30px 5px
+		background: none
 	.specialists
 		padding: 30px 5px
 		h2
@@ -25,6 +27,12 @@
 			margin: 10px
 	.about
 		padding: 30px 5px
+	.price
+		padding: 30px 5px
+	.documents
+		padding: 30px 5px
+	.contacts
+		padding: 30px 5px
 /**/
 
 
@@ -33,11 +41,7 @@
 	/**/
 
 @media only screen and (max-width : 850px)
-	.welcome
-		background: none
-	.header
-		&__nav
-			display: none
+	
 
 
 /* Small Devices, Tablets */
@@ -77,18 +81,28 @@
 		animation: none !important
 
 @media only screen and (max-width : 520px)
+	.container
+		h2
+			font-size: 2rem
 	.welcome
-		h1
-			text-align: center
-			margin-top: 70px
+		&__content	
+			h1
+				text-align: center
+				margin-top: 40px
+				span	
+					font-size: 3rem	
 		h2
 			width: 100%
 			text-align: center
+			margin-top: 0
+			font-size: 1.5rem	
 	.header__phone
 		display: none
 	.specialists
 		&__card
 			width: 100%
+	.about__block h3, .about__block p 
+		margin: 0
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
